@@ -54,7 +54,7 @@ body[data-menu="open"] .whatsapp-fab {
 
 .home-nav:hover,
 .home-nav[data-active="true"] {
-  color: #f3ead6;
+  color: #7c6230;
 }
 
 .home-nav:hover::after,
