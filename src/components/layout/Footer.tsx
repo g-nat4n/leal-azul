@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Facebook, Instagram } from "lucide-react";
 import { contacts, portalList } from "@/lib/links";
@@ -9,7 +8,8 @@ export default function Footer() {
     <footer className="bg-green-deep text-white">
       <div className="container-main grid gap-10 py-14 md:grid-cols-4">
         <div>
-          <Image src="/images/logo.png" alt="Leal" width={150} height={46} className="h-11 w-auto brightness-0 invert" />
+          <p className="display text-5xl leading-none text-white">Leal</p>
+          <p className="mt-2 text-xs uppercase tracking-[0.18em] text-sand">Administradora de condomínios</p>
           <p className="mt-4 text-sm leading-relaxed text-white/75">
             Administradora de condomínios em Curitiba. Gestão, atendimento e um canal on-line para síndico e condôminos.
           </p>

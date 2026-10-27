@@ -21,7 +21,7 @@ export default function ServiceGrid() {
             key={item}
             type="button"
             onClick={() => setFilter(item)}
-            className={`rounded-full px-4 py-2 text-sm font-bold ${filter === item ? "bg-green text-white" : "bg-white text-green-deep"}`}
+            className={`border-b-2 px-1 py-2 text-sm font-semibold ${filter === item ? "border-sand text-green-deep" : "border-transparent text-muted"}`}
           >
             {item}
           </button>
@@ -29,8 +29,8 @@ export default function ServiceGrid() {
       </div>
       <div className="grid gap-5 md:grid-cols-2">
         {visible.map((service) => (
-          <Link key={service.slug} href={`/servicos/${service.slug}`} className="feature-card block">
-            <h2 className="text-xl font-extrabold text-green-deep">{service.title}</h2>
+          <Link key={service.slug} href={`/servicos/${service.slug}`} className="group block rounded-3xl border border-white/60 bg-white/70 p-6 shadow-card backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:bg-white">
+            <h2 className="display text-[clamp(28px,3vw,34px)] text-green-deep transition group-hover:text-sand-deep">{service.title}</h2>
             <p className="mt-2 leading-relaxed text-muted">{service.summary}</p>
             <ul className="mt-4 grid gap-1 text-sm text-muted">
               {service.items.slice(0, 3).map((item) => (

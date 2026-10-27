@@ -16,10 +16,10 @@ export default function EmpresaPage() {
         description="Serviços de excelência no mercado de Curitiba e região."
         crumbs={[{ label: "Home", href: "/" }, { label: "Empresa" }]}
       />
-      <section className="section-padding">
+      <section className="section-padding bg-cream">
         <div className="container-main grid gap-8 md:grid-cols-2">
           <article className="feature-card">
-            <h2 className="text-2xl font-extrabold text-green-deep">Quem somos</h2>
+            <h2 className="display text-4xl text-green-deep">Quem somos</h2>
             <p className="mt-4 leading-relaxed text-muted">
               A satisfação do cliente é a marca da Leal. Com mais de 15 anos de mercado, a carteira reúne empreendimentos em bairros de Curitiba. Atendemos condomínios comerciais e residenciais em toda a região.
             </p>

@@ -38,20 +38,33 @@ export default function Header() {
   }, [open]);
   const [onlineOpen, setOnlineOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   function isActive(href: string) {
     if (href === "/") return pathname === "/";
     return pathname.startsWith(href);
   }
 
+  const itemClass = "home-nav text-[12px] font-medium uppercase tracking-[0.18em] text-white/80";
+  const itemActive = "home-nav text-[12px] font-medium uppercase tracking-[0.18em] text-sand";
+  const menuPanel = "menu-float absolute z-20 rounded-2xl border border-white/15 bg-[#10283a]/70 p-2 pt-3 text-foam shadow-[0_22px_48px_rgba(0,0,0,0.28)] backdrop-blur-md";
+  const menuLink = "block rounded-xl px-3 py-2.5 text-sm font-semibold text-foam transition hover:bg-white/10";
+
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-white">
-      <div className="container-main flex h-16 items-center gap-4 lg:h-[84px] lg:gap-6">
-        <Link href="/" className="shrink-0">
-          <Image src="/images/logo.png" alt="Leal Administradora de Condomínios" width={168} height={52} priority className="h-12 w-auto" />
+    <header className={`fixed inset-x-0 top-0 z-50 bg-[#0c2434] ${scrolled ? "lg:bg-[#0c2434]/70 lg:backdrop-blur-md" : "lg:bg-transparent"}`}>
+      <div className="relative mx-auto flex h-16 w-full items-center gap-4 px-4 lg:h-24 lg:px-12">
+        <Link href="/" className="shrink-0 lg:hidden">
+          <Image src="/images/logo-leal.png" alt="Leal Administradora de Condomínios" width={120} height={136} priority className="h-12 w-auto" />
         </Link>
 
-        <nav className="ml-auto hidden items-center gap-1 lg:flex" aria-label="Principal">
+        <nav className="absolute left-[40%] hidden -translate-x-1/2 items-center lg:flex" aria-label="Principal">
           {links.map((item) =>
             item.children ? (
               <div
@@ -62,15 +75,16 @@ export default function Header() {
               >
                 <Link
                   href={item.href}
-                  className={`inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-bold ${isActive(item.href) ? "text-green" : "text-green-deep hover:text-green"}`}
+                  className={`inline-flex items-center gap-1 px-3 py-2 ${isActive(item.href) ? itemActive : itemClass}`}
+                  data-active={isActive(item.href) ? "true" : undefined}
                 >
                   {item.label}
                   <ChevronDown size={14} className="transition-transform duration-200 group-hover/menu:rotate-180" />
                 </Link>
                 {servicesOpen && (
-                  <div className="absolute left-0 top-full w-64 rounded-2xl border border-line bg-white p-2 shadow-card">
+                  <div className={`${menuPanel} left-0 top-full w-64`}>
                     {item.children.map((child) => (
-                      <Link key={child.href} href={child.href} className="block rounded-xl px-3 py-2.5 text-sm font-semibold text-green-deep hover:bg-mint">
+                      <Link key={child.href} href={child.href} className={menuLink}>
                         {child.label}
                       </Link>
                     ))}
@@ -81,7 +95,8 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`rounded-lg px-3 py-2 text-sm font-bold ${isActive(item.href) ? "text-green" : "text-green-deep hover:text-green"}`}
+                className={`px-3 py-2 ${isActive(item.href) ? itemActive : itemClass}`}
+                data-active={isActive(item.href) ? "true" : undefined}
               >
                 {item.label}
               </Link>
@@ -89,22 +104,16 @@ export default function Header() {
           )}
 
           <div className="group/menu relative" onMouseEnter={() => setOnlineOpen(true)} onMouseLeave={() => setOnlineOpen(false)}>
-            <button type="button" className="inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-bold text-green-deep hover:text-green">
+            <button type="button" className={`inline-flex items-center gap-1 px-3 py-2 ${itemClass}`}>
               On-line
               <ChevronDown size={14} className="transition-transform duration-200 group-hover/menu:rotate-180" />
             </button>
             {onlineOpen && (
-              <div className="absolute right-0 top-full w-72 rounded-2xl border border-line bg-white p-2 shadow-card">
+              <div className={`${menuPanel} right-0 top-full w-72`}>
                 {portalList.map((portal) => (
-                  <a
-                    key={portal.href}
-                    href={portal.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="block rounded-xl px-3 py-2.5 hover:bg-mint"
-                  >
-                    <span className="block text-sm font-bold text-green-deep">{portal.label}</span>
-                    <span className="block text-xs leading-relaxed text-muted">{portal.description}</span>
+                  <a key={portal.href} href={portal.href} target="_blank" rel="noreferrer" className={menuLink}>
+                    <span className="block text-sm font-bold">{portal.label}</span>
+                    <span className="mt-0.5 block text-xs leading-relaxed text-foam/70">{portal.description}</span>
                   </a>
                 ))}
               </div>
@@ -112,30 +121,30 @@ export default function Header() {
           </div>
         </nav>
 
-        <a href={portalList[0].href} target="_blank" rel="noreferrer" className="btn btn-primary hidden px-4 py-2.5 text-sm lg:inline-flex">
-          Área do cliente
-        </a>
+        <Link href="/" className="absolute right-6 top-3 hidden lg:right-10 lg:top-4 lg:block">
+          <Image src="/images/logo-leal.png" alt="Leal Administradora de Condomínios" width={180} height={205} priority className="h-[148px] w-auto" />
+        </Link>
 
-        <button type="button" className="ml-auto inline-flex h-11 w-11 items-center justify-center rounded-lg text-green-deep lg:hidden" aria-label={open ? "Fechar menu" : "Abrir menu"} onClick={() => setOpen((value) => !value)}>
+        <button type="button" className="ml-auto inline-flex h-11 w-11 items-center justify-center rounded-full text-white lg:hidden" aria-label={open ? "Fechar menu" : "Abrir menu"} onClick={() => setOpen((value) => !value)}>
           {open ? <X /> : <Menu />}
         </button>
       </div>
 
       {open && (
-        <nav className="fixed inset-x-0 bottom-0 top-16 z-40 overflow-y-auto bg-white lg:hidden" aria-label="Menu">
+        <nav className="fixed inset-x-0 bottom-0 top-16 z-40 overflow-y-auto bg-[#0c2434] lg:hidden" aria-label="Menu">
           <div className="container-main flex flex-col pb-28 pt-2">
             {links.map((item) =>
               item.children ? (
-                <div key={item.href} className="border-b border-line">
-                  <button type="button" className="flex w-full items-center justify-between px-1 py-4 text-left font-bold text-green-deep" onClick={() => setMobileServices((value) => !value)} aria-expanded={mobileServices}>
+                <div key={item.href} className="border-b border-white/15">
+                  <button type="button" className="flex w-full items-center justify-between px-1 py-4 text-left font-bold text-foam" onClick={() => setMobileServices((value) => !value)} aria-expanded={mobileServices}>
                     {item.label}
                     <ChevronDown size={18} className={`text-sand transition-transform duration-200 ${mobileServices ? "rotate-180" : ""}`} />
                   </button>
                   {mobileServices && (
                     <div className="grid pb-3">
-                      <Link href={item.href} className="px-4 py-2 text-sm font-semibold text-muted">Ver todos</Link>
+                      <Link href={item.href} className="px-4 py-2 text-sm font-semibold text-foam/70">Ver todos</Link>
                       {item.children.map((child) => (
-                        <Link key={child.href} href={child.href} className="px-4 py-2 text-sm text-green-deep">
+                        <Link key={child.href} href={child.href} className="px-4 py-2 text-sm text-foam">
                           {child.label}
                         </Link>
                       ))}
@@ -143,20 +152,20 @@ export default function Header() {
                   )}
                 </div>
               ) : (
-                <Link key={item.href} href={item.href} className="block border-b border-line px-1 py-4 font-bold text-green-deep">
+                <Link key={item.href} href={item.href} className="block border-b border-white/15 px-1 py-4 font-bold text-foam">
                   {item.label}
                 </Link>
               ),
             )}
-            <div className="border-b border-line">
-              <button type="button" className="flex w-full items-center justify-between px-1 py-4 text-left font-bold text-green-deep" onClick={() => setMobileOnline((value) => !value)} aria-expanded={mobileOnline}>
+            <div className="border-b border-white/15">
+              <button type="button" className="flex w-full items-center justify-between px-1 py-4 text-left font-bold text-foam" onClick={() => setMobileOnline((value) => !value)} aria-expanded={mobileOnline}>
                 On-line
                 <ChevronDown size={18} className={`text-sand transition-transform duration-200 ${mobileOnline ? "rotate-180" : ""}`} />
               </button>
               {mobileOnline && (
                 <div className="grid pb-3">
                   {portalList.map((portal) => (
-                    <a key={portal.href} href={portal.href} target="_blank" rel="noreferrer" className="px-4 py-2 text-sm text-green-deep" onClick={() => setOpen(false)}>
+                    <a key={portal.href} href={portal.href} target="_blank" rel="noreferrer" className="px-4 py-2 text-sm text-foam" onClick={() => setOpen(false)}>
                       {portal.label}
                     </a>
                   ))}

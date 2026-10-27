@@ -16,6 +16,22 @@ export const contacts = {
     "https://www.google.com/maps/search/?api=1&query=Rua+Voluntarios+da+Patria+233+Centro+Curitiba+PR",
 } as const;
 
+export const googleReview = {
+  scoreLabel: "5,0",
+  count: 3,
+  href: "https://www.google.com/maps/search/?api=1&query=Leal+Administradora+de+Condominios+Rua+Voluntarios+da+Patria+233+Curitiba",
+  quotes: [
+    {
+      text: "Conheço o pessoal que trabalha lá. Leal são muito competentes, tudo bem transparente e ágil, facilitando a nossa vida.",
+      date: "junho de 2023",
+    },
+    {
+      text: "Trabalho muito profissional e nós atendem prontamente.",
+      date: "abril de 2023",
+    },
+  ],
+} as const;
+
 export function whatsappHref(text = "Olá, gostaria de falar com a Leal Administradora de Condomínios.") {
   return `https://api.whatsapp.com/send?phone=${contacts.whatsappNumber}&text=${encodeURIComponent(text)}`;
 }

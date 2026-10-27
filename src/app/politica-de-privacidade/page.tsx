@@ -16,7 +16,7 @@ export default function PrivacidadePage() {
         description="A E N Leal Contabilidade trata os dados enviados neste site para responder contatos e enviar propostas."
         crumbs={[{ label: "Home", href: "/" }, { label: "Política de privacidade" }]}
       />
-      <section className="section-padding">
+      <section className="section-padding bg-cream">
         <div className="container-main max-w-3xl space-y-5 leading-relaxed text-muted">
           <p>Última atualização de referência do site anterior: 21 de janeiro de 2021.</p>
           <p>

@@ -18,12 +18,12 @@ export default function ContatoPage() {
         description="Solicite uma proposta e conheça o que a Leal Administradora de Condomínios tem a oferecer."
         crumbs={[{ label: "Home", href: "/" }, { label: "Contato" }]}
       />
-      <section className="section-padding">
+      <section className="section-padding bg-cream">
         <div className="container-main grid items-start gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="grid gap-4">
             <article className="rounded-3xl bg-green-deep p-6 text-white">
               <p className="eyebrow-light">Endereço</p>
-              <h2 className="mt-3 text-2xl font-extrabold" style={{ fontFamily: "var(--font-manrope), Manrope, sans-serif" }}>
+              <h2 className="display mt-3 text-4xl">
                 Escritório no Centro
               </h2>
               <p className="mt-3 flex gap-3 leading-relaxed text-white/85">
@@ -74,7 +74,7 @@ export default function ContatoPage() {
       </section>
       <section className="pb-16">
         <div className="container-main">
-          <h2 className="mb-4 text-2xl font-extrabold text-green-deep" style={{ fontFamily: "var(--font-manrope), Manrope, sans-serif" }}>
+          <h2 className="display mb-4 text-4xl text-green-deep">
             Mapa
           </h2>
           <div className="overflow-hidden rounded-3xl border border-line">

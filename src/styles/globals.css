@@ -1,24 +1,67 @@
 @import "tailwindcss";
 
 @theme {
-  --color-green: #89694c;
-  --color-green-dark: #6d5138;
-  --color-green-deep: #172b43;
-  --color-foam: #e8d7c3;
-  --color-sand: #89694c;
-  --color-sand-deep: #6d5138;
-  --color-mint: #f6f1ea;
-  --color-cream: #f7f4ef;
-  --color-line: #e5dfd6;
-  --color-text: #1c2430;
-  --color-muted: #5c6570;
+  --color-green: #7c6230;
+  --color-green-dark: #5c4a24;
+  --color-green-deep: #0f2b3f;
+  --color-foam: #f3ead6;
+  --color-sand: #b79848;
+  --color-sand-deep: #7c6230;
+  --color-mint: #f7f4ee;
+  --color-cream: #f4f1eb;
+  --color-line: #e6dfd4;
+  --color-text: #0f2b3f;
+  --color-muted: #5a6570;
   --font-sans: "DM Sans", sans-serif;
   --font-display: "Manrope", sans-serif;
-  --shadow-card: 0 16px 45px rgba(23, 43, 67, 0.1);
+  --shadow-card: 0 16px 40px rgba(15, 43, 63, 0.08);
 }
 
 body[data-menu="open"] .whatsapp-fab {
   visibility: hidden;
+}
+
+.hero-panel {
+  background-color: #0c2434;
+  background-image:
+    radial-gradient(900px 520px at 0% 100%, rgba(18, 69, 101, 0.45), transparent 62%),
+    radial-gradient(640px 420px at 100% 0%, rgba(183, 152, 72, 0.14), transparent 58%);
+}
+
+.home-nav {
+  position: relative;
+}
+
+.home-nav::after {
+  content: "";
+  position: absolute;
+  left: 0.7rem;
+  right: 0.7rem;
+  bottom: 0.2rem;
+  height: 1px;
+  background: #b79848;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.2s ease;
+}
+
+.home-nav:hover,
+.home-nav[data-active="true"] {
+  color: #f3ead6;
+}
+
+.home-nav:hover::after,
+.home-nav[data-active="true"]::after {
+  transform: scaleX(1);
+}
+
+.hero-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.22;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 @layer base {
@@ -41,24 +84,30 @@ body[data-menu="open"] .whatsapp-fab {
     @apply mx-auto w-[min(1180px,calc(100%-40px))];
   }
 
+  .display {
+    font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+
   .eyebrow {
-    @apply text-xs font-extrabold uppercase tracking-[2px] text-green;
+    @apply text-xs font-semibold uppercase tracking-[0.22em] text-sand-deep;
   }
 
   .eyebrow-light {
-    @apply text-xs font-extrabold uppercase tracking-[2px] text-foam;
+    @apply text-xs font-semibold uppercase tracking-[0.22em] text-sand;
   }
 
   .btn {
-    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-[10px] border border-transparent px-5 py-3.5 font-bold transition duration-200;
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-full border border-transparent px-5 py-3.5 text-sm font-semibold tracking-wide transition duration-200;
   }
 
   .btn-primary {
-    @apply bg-green text-white hover:bg-green-dark;
+    @apply bg-sand text-green-deep hover:bg-green-deep hover:text-white;
   }
 
   .btn-sand {
-    @apply bg-sand text-white hover:bg-sand-deep;
+    @apply bg-sand text-green-deep hover:bg-white;
   }
 
   .btn-ghost {
@@ -93,8 +142,9 @@ body[data-menu="open"] .whatsapp-fab {
   }
 
   .section-title h2 {
-    @apply my-2.5 mb-3.5 text-[clamp(31px,4vw,48px)] font-extrabold leading-[1.13] text-green-deep;
-    font-family: var(--font-manrope), "Manrope", sans-serif;
+    @apply my-2.5 mb-3.5 text-[clamp(32px,4vw,48px)] leading-[1.08] text-green-deep;
+    font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+    font-weight: 500;
   }
 
   .section-title p {
@@ -122,10 +172,49 @@ body[data-menu="open"] .whatsapp-fab {
   }
 
   .feature-card {
-    @apply rounded-2xl border border-line bg-white p-6 shadow-[0_4px_15px_rgba(16,32,51,0.03)] transition duration-300 hover:-translate-y-1 hover:border-[#d4c4ae] hover:shadow-card;
+    @apply rounded-3xl border border-line bg-white p-6 transition duration-200 hover:border-sand;
   }
 
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-in {
+  opacity: 1;
+  transform: none;
+}
+
+.menu-float {
+  animation: menu-in 0.18s ease;
+}
+
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .menu-float {
+    animation: none;
+  }
+}
+
   .form-input {
-    @apply mt-1.5 block w-full rounded-[9px] border border-line bg-white px-3.5 py-3 font-[inherit] text-text outline-none transition focus:border-green;
+    @apply mt-1.5 block w-full rounded-2xl border border-line bg-white px-3.5 py-3 font-[inherit] text-text outline-none transition focus:border-sand;
   }
 }

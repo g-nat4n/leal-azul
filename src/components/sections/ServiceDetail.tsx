@@ -19,7 +19,7 @@ export default function ServiceDetail({ slug }: { slug: string }) {
           { label: service.title },
         ]}
       />
-      <section className="section-padding">
+      <section className="section-padding bg-cream">
         <div className="container-main grid gap-12 lg:grid-cols-[1.4fr_0.6fr]">
           <ul className="check-list">
             {service.items.map((item) => (
@@ -29,7 +29,7 @@ export default function ServiceDetail({ slug }: { slug: string }) {
               </li>
             ))}
           </ul>
-          <aside className="h-fit rounded-3xl bg-mint p-6">
+          <aside className="h-fit rounded-3xl border border-white/60 bg-white/70 p-6 shadow-card backdrop-blur-sm">
             <p className="text-sm font-extrabold uppercase tracking-[2px] text-sand-deep">Outros serviços</p>
             <ul className="mt-4 grid gap-2">
               {services

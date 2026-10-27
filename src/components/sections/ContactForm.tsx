@@ -55,7 +55,7 @@ export default function ContactForm() {
   return (
     <form onSubmit={onSubmit} className="grid gap-4 rounded-3xl border border-line bg-white p-6 shadow-card md:p-8">
       <div>
-        <h2 className="text-2xl font-extrabold text-green-deep" style={{ fontFamily: "var(--font-manrope), Manrope, sans-serif" }}>Envie uma mensagem</h2>
+        <h2 className="display text-4xl leading-none text-green-deep">Envie uma mensagem</h2>
         <p className="mt-1 text-sm text-muted">Solicite uma proposta e conheça o que a Leal pode oferecer ao condomínio.</p>
       </div>
       <label className="text-sm font-bold text-green-deep">

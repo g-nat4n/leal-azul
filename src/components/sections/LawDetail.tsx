@@ -17,7 +17,7 @@ export default function LawDetail({ slug }: { slug: string }) {
           { label: law.title },
         ]}
       />
-      <section className="section-padding">
+      <section className="section-padding bg-cream">
         <div className="container-main grid gap-10 lg:grid-cols-[1.4fr_0.6fr]">
           <div>
             <p className="text-sm text-muted">Publicado no site em {law.date}</p>
