@@ -1,20 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-green: #008577;
-  --color-green-dark: #006e62;
-  --color-green-deep: #054e47;
-  --color-foam: #c9f3ec;
+  --color-green: #89694c;
+  --color-green-dark: #6d5138;
+  --color-green-deep: #172b43;
+  --color-foam: #e8d7c3;
   --color-sand: #89694c;
   --color-sand-deep: #6d5138;
-  --color-mint: #e6f7f4;
+  --color-mint: #f6f1ea;
   --color-cream: #f7f4ef;
-  --color-line: #e3eeeb;
-  --color-text: #1c2422;
-  --color-muted: #5c6b68;
+  --color-line: #e5dfd6;
+  --color-text: #1c2430;
+  --color-muted: #5c6570;
   --font-sans: "DM Sans", sans-serif;
   --font-display: "Manrope", sans-serif;
-  --shadow-card: 0 16px 45px rgba(5, 78, 71, 0.1);
+  --shadow-card: 0 16px 45px rgba(23, 43, 67, 0.1);
 }
 
 body[data-menu="open"] .whatsapp-fab {
@@ -122,7 +122,7 @@ body[data-menu="open"] .whatsapp-fab {
   }
 
   .feature-card {
-    @apply rounded-2xl border border-line bg-white p-6 shadow-[0_4px_15px_rgba(16,32,51,0.03)] transition duration-300 hover:-translate-y-1 hover:border-[#a7d7cf] hover:shadow-card;
+    @apply rounded-2xl border border-line bg-white p-6 shadow-[0_4px_15px_rgba(16,32,51,0.03)] transition duration-300 hover:-translate-y-1 hover:border-[#d4c4ae] hover:shadow-card;
   }
 
   .form-input {
