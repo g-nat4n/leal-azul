@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Star } from "lucide-react";
 import { contacts, googleReview, portalList } from "@/lib/links";
-import { services } from "@/lib/data";
 import ContactCta from "@/components/sections/ContactCta";
+import ServiceRail from "@/components/sections/ServiceRail";
 import Reveal from "@/components/ui/Reveal";
 
 const portalPhotos = [
@@ -15,17 +15,28 @@ const portalPhotos = [
 export default function HomeContent() {
   return (
     <>
-      <section className="relative flex flex-col lg:grid lg:min-h-[100svh] lg:grid-cols-[minmax(0,1.28fr)_minmax(0,0.72fr)]">
-        <div className="hero-panel relative flex flex-col justify-center px-6 pb-12 pt-24 text-white sm:px-10 lg:px-16 lg:pb-16 lg:pt-28">
-          <div className="w-full max-w-xl">
-            <p className="text-[12px] uppercase tracking-[0.42em] text-sand sm:text-[13px] sm:tracking-[0.46em]">Curitiba e região</p>
+      <section className="relative min-h-[100svh] lg:grid lg:grid-cols-[minmax(0,1.28fr)_minmax(0,0.72fr)]">
+        <div className="absolute inset-0 lg:relative lg:col-start-2 lg:row-start-1 lg:min-h-full">
+          <Image
+            src="/images/hero-condominio.jpg"
+            alt="Fachada de um condomínio residencial, com varandas e janelas"
+            fill
+            priority
+            className="object-cover"
+            sizes="(min-width: 1024px) 46vw, 100vw"
+          />
+          <div className="absolute inset-0 bg-[#0c2434]/68 lg:bg-transparent lg:bg-gradient-to-t lg:from-black/35 lg:via-transparent lg:to-black/20" />
+        </div>
+        <div className="hero-copy relative z-10 flex min-h-[100svh] flex-col items-center justify-center px-6 pb-12 pt-24 text-center text-white sm:px-10 lg:col-start-1 lg:row-start-1 lg:px-12 lg:pb-16 lg:pt-28">
+          <div className="flex w-full max-w-xl flex-col items-center">
+            <p className="text-[12px] uppercase tracking-[0.28em] text-sand sm:text-[13px] sm:tracking-[0.32em]">Curitiba, região e litoral</p>
             <h1 className="display mt-4 text-[clamp(64px,16vw,188px)] uppercase leading-[0.78] tracking-[0.04em] text-white lg:mt-5 lg:tracking-[0.05em]">Leal</h1>
             <p className="mt-4 max-w-[16rem] text-[12px] uppercase leading-relaxed tracking-[0.28em] text-foam sm:max-w-none sm:text-[13px] sm:tracking-[0.32em]">Administradora de condomínios</p>
-            <div className="mt-8 grid max-w-lg grid-cols-2 gap-6 text-[12px] uppercase leading-relaxed tracking-[0.16em] text-white/80 sm:gap-8 sm:text-[13px] sm:tracking-[0.2em] lg:mt-10">
+            <div className="mt-8 grid w-full max-w-md grid-cols-2 gap-6 text-[12px] uppercase leading-relaxed tracking-[0.16em] text-white/80 sm:gap-8 sm:text-[13px] sm:tracking-[0.2em] lg:mt-10">
               <p>Mais de<br />15 anos</p>
               <p>Residencial<br />e comercial</p>
             </div>
-            <div className="mt-10 flex flex-wrap items-center gap-6">
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
               <Link href="/contato" className="btn btn-sand rounded-full">
                 Solicite uma proposta
               </Link>
@@ -35,41 +46,60 @@ export default function HomeContent() {
             </div>
           </div>
         </div>
-        <div className="relative h-[40vh] min-h-64 lg:h-auto lg:min-h-full">
-          <Image
-            src="/images/hero-condominio.jpg"
-            alt="Fachada de um condomínio residencial, com varandas e janelas"
-            fill
-            priority
-            className="object-cover"
-            sizes="(min-width: 1024px) 46vw, 100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/20" />
-        </div>
-        <p className="absolute inset-x-0 bottom-5 hidden px-6 text-center text-[11px] uppercase tracking-[0.32em] text-white/85 lg:block">
-          Gestão condominial em Curitiba e região
+        <p className="absolute inset-x-0 bottom-5 z-10 hidden px-6 text-center text-[11px] uppercase tracking-[0.32em] text-white/85 lg:block">
+          Gestão condominial em Curitiba, região e litoral
         </p>
       </section>
 
       <Reveal>
       <section className="bg-cream">
         <div className="container-main py-16 lg:py-24">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <h2 className="display text-[clamp(36px,4vw,56px)] leading-none text-green-deep">Serviços para condomínios</h2>
+          <h2 className="display text-[clamp(36px,4vw,56px)] leading-none text-green-deep">Serviços para condomínios</h2>
+          <article className="relative mt-10 min-h-[420px] overflow-hidden rounded-3xl bg-[#0c2434] shadow-card lg:grid lg:min-h-[460px] lg:grid-cols-[0.72fr_1.28fr]">
+            <Image
+              src="/images/hero-condominio.jpg"
+              alt=""
+              fill
+              className="object-cover object-[72%_center] lg:hidden"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-[#0c2434]/72 lg:hidden" />
+            <div className="relative z-10 hidden items-center justify-center bg-cream px-8 py-10 lg:flex">
+              <Image
+                src="/images/logo-leal.png"
+                alt="Leal Administradora de Condomínios"
+                width={456}
+                height={519}
+                className="h-auto w-[240px]"
+              />
             </div>
-            <Link href="/servicos" className="link-more">Ver todos</Link>
+            <div className="relative z-10 flex flex-col justify-center px-6 py-10 text-white sm:px-10 lg:px-12">
+              <Image
+                src="/images/hero-condominio.jpg"
+                alt=""
+                fill
+                className="hidden object-cover lg:block"
+                sizes="(min-width: 1024px) 55vw, 100vw"
+              />
+              <div className="absolute inset-0 hidden bg-[#0c2434]/78 lg:block" />
+              <div className="relative max-w-xl">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-sand">Síndico profissional</p>
+                <h3 className="display mt-4 text-[clamp(34px,3.6vw,52px)] leading-[1.02]">Se está precisando de um síndico profissional</h3>
+                <p className="mt-4 max-w-md text-[15px] leading-relaxed text-white/80">Duas formas de contar com um síndico profissional no condomínio.</p>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  {["Síndico exclusivo", "Síndico independente"].map((option) => (
+                    <Link key={option} href="/contato" className="inline-flex items-center justify-center rounded-full border border-sand/80 px-5 py-2.5 text-sm font-semibold tracking-wide text-foam transition duration-200 hover:bg-sand hover:text-green-deep">
+                      {option}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </article>
+          <ServiceRail />
+          <div className="mt-8 flex justify-center">
+            <Link href="/servicos" className="inline-flex items-center justify-center rounded-full border border-sand/80 px-5 py-2.5 text-sm font-semibold tracking-wide text-green-deep transition duration-200 hover:bg-sand hover:text-green-deep">Conheça mais serviços</Link>
           </div>
-          <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
-              <li key={service.slug}>
-                <Link href={`/servicos/${service.slug}`} className="group flex h-full flex-col rounded-3xl border border-white/60 bg-white/55 p-6 shadow-card backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:bg-white/80">
-                  <span className="display text-[clamp(28px,3vw,34px)] text-green-deep transition group-hover:text-sand-deep">{service.title}</span>
-                  <span className="mt-3 text-sm leading-relaxed text-muted">{service.summary}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
       </Reveal>

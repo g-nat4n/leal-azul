@@ -21,11 +21,18 @@ body[data-menu="open"] .whatsapp-fab {
   visibility: hidden;
 }
 
-.hero-panel {
+.hero-panel,
+.hero-copy {
   background-color: #0c2434;
   background-image:
     radial-gradient(900px 520px at 0% 100%, rgba(18, 69, 101, 0.45), transparent 62%),
     radial-gradient(640px 420px at 100% 0%, rgba(183, 152, 72, 0.14), transparent 58%);
+}
+
+@media (max-width: 1023px) {
+  .hero-copy {
+    background: none;
+  }
 }
 
 .home-nav {
@@ -55,13 +62,20 @@ body[data-menu="open"] .whatsapp-fab {
   transform: scaleX(1);
 }
 
-.hero-panel::before {
+.hero-panel::before,
+.hero-copy::before {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
   opacity: 0.22;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (max-width: 1023px) {
+  .hero-copy::before {
+    content: none;
+  }
 }
 
 @layer base {
@@ -201,6 +215,19 @@ body[data-menu="open"] .whatsapp-fab {
   }
 }
 
+.service-marquee {
+  animation: service-marquee 36s linear infinite;
+}
+
+@keyframes service-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal,
   .reveal-in {
@@ -210,6 +237,10 @@ body[data-menu="open"] .whatsapp-fab {
   }
 
   .menu-float {
+    animation: none;
+  }
+
+  .service-marquee {
     animation: none;
   }
 }

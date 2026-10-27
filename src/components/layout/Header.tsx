@@ -59,9 +59,9 @@ export default function Header() {
 
   return (
     <header className={`fixed inset-x-0 top-0 z-50 bg-[#0c2434] ${scrolled ? "lg:bg-[#0c2434]/70 lg:backdrop-blur-md" : "lg:bg-transparent"}`}>
-      <div className="relative mx-auto flex h-16 w-full items-center gap-4 px-4 lg:h-24 lg:px-12">
+      <div className="relative mx-auto flex h-24 w-full items-center gap-4 px-4 lg:px-12">
         <Link href="/" className="shrink-0 lg:hidden">
-          <Image src="/images/logo-leal.png" alt="Leal Administradora de Condomínios" width={120} height={136} priority className="h-12 w-auto" />
+          <Image src="/images/logo-leal.png" alt="Leal Administradora de Condomínios" width={180} height={205} priority className="h-20 w-auto" />
         </Link>
 
         <nav className="absolute left-[40%] hidden -translate-x-1/2 items-center lg:flex" aria-label="Principal">
@@ -131,7 +131,7 @@ export default function Header() {
       </div>
 
       {open && (
-        <nav className="fixed inset-x-0 bottom-0 top-16 z-40 overflow-y-auto bg-[#0c2434] lg:hidden" aria-label="Menu">
+        <nav className="fixed inset-x-0 bottom-0 top-24 z-40 overflow-y-auto bg-[#0c2434] lg:hidden" aria-label="Menu">
           <div className="container-main flex flex-col pb-28 pt-2">
             {links.map((item) =>
               item.children ? (
