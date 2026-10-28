@@ -16,7 +16,7 @@ export default function PageHero({
 }) {
   return (
     <section className="relative flex flex-col lg:grid lg:min-h-[560px] lg:grid-cols-[minmax(0,1.28fr)_minmax(0,0.72fr)]">
-      <div className="hero-panel relative flex flex-col items-center justify-center px-6 pb-12 pt-24 text-center text-white sm:px-10 lg:px-16 lg:pb-16 lg:pt-32">
+      <div className="hero-panel relative flex flex-col items-center justify-center px-6 pb-12 pt-[148px] text-center text-white sm:px-10 lg:px-16 lg:pb-16 lg:pt-[210px]">
         <div className="w-full max-w-2xl">
           <nav className="text-sm text-white/65" aria-label="Trilha">
             {crumbs.map((crumb, index) => (

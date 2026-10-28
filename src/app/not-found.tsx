@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <section className="hero-panel relative px-6 pb-20 pt-32 text-center text-white sm:px-10 lg:pt-40">
+    <section className="hero-panel relative px-6 pb-20 pt-[168px] text-center text-white sm:px-10 lg:pt-[220px]">
       <div className="container-main">
         <p className="eyebrow-light">404</p>
         <h1 className="display mt-3 text-5xl text-white">

@@ -59,12 +59,12 @@ export default function Header() {
 
   return (
     <header className={`fixed inset-x-0 top-0 z-50 border-b border-line bg-white ${scrolled ? "shadow-[0_8px_24px_rgba(15,43,63,0.06)]" : ""}`}>
-      <div className="relative mx-auto flex h-24 w-full items-center gap-4 px-4 lg:px-12">
-        <Link href="/" className="shrink-0 lg:hidden">
-          <Image src="/images/logo-leal.png" alt="Leal Administradora de Condomínios" width={180} height={205} priority className="h-20 w-auto" />
+      <div className="relative mx-auto flex h-[148px] w-full items-center px-4 lg:h-[188px] lg:px-12">
+        <Link href="/" className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 lg:hidden">
+          <Image src="/images/logo-leal.png" alt="Leal Administradora de Condomínios" width={180} height={205} priority className="h-[118px] w-auto" />
         </Link>
 
-        <nav className="absolute left-[40%] hidden -translate-x-1/2 items-center lg:flex" aria-label="Principal">
+        <nav className="absolute left-[40%] top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center lg:flex" aria-label="Principal">
           {links.map((item) =>
             item.children ? (
               <div
@@ -121,17 +121,17 @@ export default function Header() {
           </div>
         </nav>
 
-        <Link href="/" className="absolute right-6 top-3 hidden lg:right-10 lg:top-4 lg:block">
+        <Link href="/" className="absolute right-10 top-1/2 hidden -translate-y-1/2 lg:block">
           <Image src="/images/logo-leal.png" alt="Leal Administradora de Condomínios" width={180} height={205} priority className="h-[148px] w-auto" />
         </Link>
 
-        <button type="button" className="ml-auto inline-flex h-11 w-11 items-center justify-center rounded-full text-green-deep lg:hidden" aria-label={open ? "Fechar menu" : "Abrir menu"} onClick={() => setOpen((value) => !value)}>
+        <button type="button" className="relative z-20 ml-auto inline-flex h-11 w-11 items-center justify-center rounded-full text-green-deep lg:hidden" aria-label={open ? "Fechar menu" : "Abrir menu"} onClick={() => setOpen((value) => !value)}>
           {open ? <X /> : <Menu />}
         </button>
       </div>
 
       {open && (
-        <nav className="fixed inset-x-0 bottom-0 top-24 z-40 overflow-y-auto bg-white lg:hidden" aria-label="Menu">
+        <nav className="fixed inset-x-0 bottom-0 top-[148px] z-40 overflow-y-auto bg-white lg:hidden" aria-label="Menu">
           <div className="container-main flex flex-col pb-28 pt-2">
             {links.map((item) =>
               item.children ? (

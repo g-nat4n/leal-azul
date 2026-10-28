@@ -27,7 +27,7 @@ export default function HomeContent() {
           />
           <div className="absolute inset-0 bg-[#0c2434]/68 lg:bg-transparent lg:bg-gradient-to-t lg:from-black/35 lg:via-transparent lg:to-black/20" />
         </div>
-        <div className="hero-copy relative z-10 flex min-h-[100svh] flex-col items-center justify-center px-6 pb-12 pt-24 text-center text-white sm:px-10 lg:col-start-1 lg:row-start-1 lg:px-12 lg:pb-16 lg:pt-28">
+        <div className="hero-copy relative z-10 flex min-h-[100svh] flex-col items-center justify-center px-6 pb-12 pt-[148px] text-center text-white sm:px-10 lg:col-start-1 lg:row-start-1 lg:px-12 lg:pb-16 lg:pt-[200px]">
           <div className="flex w-full max-w-xl flex-col items-center">
             <p className="text-[12px] uppercase tracking-[0.28em] text-sand sm:text-[13px] sm:tracking-[0.32em]">Curitiba, região e litoral</p>
             <h1 className="display mt-4 text-[clamp(64px,16vw,188px)] uppercase leading-[0.78] tracking-[0.04em] text-white lg:mt-5 lg:tracking-[0.05em]">Leal</h1>
