@@ -15,8 +15,8 @@ const portalPhotos = [
 export default function HomeContent() {
   return (
     <>
-      <section className="relative min-h-[100svh] lg:grid lg:grid-cols-[minmax(0,1.28fr)_minmax(0,0.72fr)]">
-        <div className="absolute inset-0 lg:relative lg:col-start-2 lg:row-start-1 lg:min-h-full">
+      <section className="relative min-h-[100svh]">
+        <div className="absolute inset-0">
           <Image
             src="/images/hero-cidade-fundo.jpg"
             alt="Horizonte de uma cidade à noite, com prédios iluminados"
@@ -24,22 +24,23 @@ export default function HomeContent() {
             priority
             unoptimized
             quality={92}
-            className="object-cover"
+            className="object-cover object-center"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-[#0c2434]/68 lg:bg-transparent lg:bg-gradient-to-t lg:from-black/35 lg:via-transparent lg:to-black/20" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(12,36,52,0.82)_0%,rgba(12,36,52,0.5)_46%,rgba(12,36,52,0.18)_100%)]" />
         </div>
-        <div className="hero-copy relative z-10 flex min-h-[100svh] flex-col items-center justify-center px-6 pb-12 pt-[148px] text-center text-white sm:px-10 lg:col-start-1 lg:row-start-1 lg:px-12 lg:pb-16 lg:pt-[200px]">
-          <div className="flex w-full max-w-xl flex-col items-center">
+        <div className="relative z-10 flex min-h-[100svh] flex-col items-center justify-center px-6 pb-16 pt-[168px] text-center text-white sm:px-10 lg:px-16 lg:pb-20 lg:pt-[220px]">
+          <div className="flex w-full max-w-xl flex-col items-center lg:max-w-3xl" style={{ textShadow: "0 2px 18px rgba(0,0,0,0.45)" }}>
             <p className="text-[12px] uppercase tracking-[0.28em] text-sand sm:text-[13px] sm:tracking-[0.32em]">Curitiba, região e litoral</p>
-            <h1 className="display mt-4 text-[clamp(64px,16vw,188px)] uppercase leading-[0.78] tracking-[0.04em] text-white lg:mt-5 lg:tracking-[0.05em]">Leal</h1>
-            <p className="mt-4 max-w-[16rem] text-[12px] uppercase leading-relaxed tracking-[0.28em] text-foam sm:max-w-none sm:text-[13px] sm:tracking-[0.32em]">Administradora de condomínios</p>
-            <div className="mt-8 grid w-full max-w-md grid-cols-2 gap-6 text-[12px] uppercase leading-relaxed tracking-[0.16em] text-white/80 sm:gap-8 sm:text-[13px] sm:tracking-[0.2em] lg:mt-10">
+            <h1 className="display mt-3 text-[clamp(84px,13vw,168px)] font-semibold uppercase leading-[0.82] tracking-[0.03em] text-white lg:mt-4" style={{ textShadow: "0 10px 36px rgba(0,0,0,0.55)" }}>Leal</h1>
+            <span className="mt-5 block h-px w-16 bg-sand" />
+            <p className="mt-5 max-w-md text-[15px] font-medium uppercase leading-relaxed tracking-[0.2em] text-white sm:text-[18px] sm:tracking-[0.24em]">Administradora de condomínios</p>
+            <div className="mt-8 grid w-full max-w-md grid-cols-2 gap-6 text-[13px] uppercase leading-relaxed tracking-[0.16em] text-white sm:text-[14px] sm:tracking-[0.18em] lg:mt-10">
               <p>Mais de<br />15 anos</p>
               <p>Residencial<br />e comercial</p>
             </div>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
-              <Link href="/contato" className="btn btn-sand rounded-full">
+              <Link href="/contato" className="btn btn-ghost px-6 text-[12px] uppercase tracking-[0.16em]">
                 Solicite uma proposta
               </Link>
               <a href={portalList[0].href} target="_blank" rel="noreferrer" className="text-[12px] uppercase tracking-[0.2em] text-white/85 underline decoration-white/40 underline-offset-8 hover:text-sand">
@@ -48,9 +49,6 @@ export default function HomeContent() {
             </div>
           </div>
         </div>
-        <p className="absolute inset-x-0 bottom-5 z-10 hidden px-6 text-center text-[11px] uppercase tracking-[0.32em] text-white/85 lg:block">
-          Gestão condominial em Curitiba, região e litoral
-        </p>
       </section>
 
       <Reveal>
