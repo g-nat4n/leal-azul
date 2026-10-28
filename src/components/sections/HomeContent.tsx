@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Star } from "lucide-react";
+import { Check, Star } from "lucide-react";
 import { contacts, googleReview, portalList } from "@/lib/links";
 import ContactCta from "@/components/sections/ContactCta";
 import ServiceRail from "@/components/sections/ServiceRail";
@@ -17,16 +17,15 @@ export default function HomeContent() {
     <>
       <section className="relative min-h-[100svh]">
         <div className="absolute inset-0">
-          <Image
-            src="/images/hero-cidade-fundo.jpg"
-            alt="Horizonte de uma cidade à noite, com prédios iluminados"
-            fill
-            priority
-            unoptimized
-            quality={92}
-            className="object-cover object-center"
-            sizes="100vw"
-          />
+          <picture>
+            <source media="(min-width: 1024px)" srcSet="/images/hero-cidade-fundo.jpg?v=1600" />
+            <img
+              src="/images/hero-cidade-mobile.jpg?v=1170"
+              alt="Horizonte de uma cidade à noite, com prédios iluminados"
+              fetchPriority="high"
+              className="absolute inset-0 h-full w-full object-cover object-center"
+            />
+          </picture>
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(12,36,52,0.82)_0%,rgba(12,36,52,0.5)_46%,rgba(12,36,52,0.18)_100%)]" />
         </div>
         <div className="relative z-10 flex min-h-[100svh] flex-col items-center justify-center px-6 pb-16 pt-[168px] text-center text-white sm:px-10 lg:px-16 lg:pb-20 lg:pt-[220px]">
@@ -49,6 +48,11 @@ export default function HomeContent() {
             </div>
           </div>
         </div>
+        <p className="absolute bottom-3 right-4 z-10 max-w-[16rem] text-right text-[10px] leading-snug tracking-wide text-white/55">
+          <a href="https://wallpapers.com/wallpapers/blue-tinted-skyline-photo-of-los-angeles-4k-0pz4g2ee6uyfhucs.html" target="_blank" rel="noreferrer" className="underline decoration-white/30 underline-offset-2">Blue-Tinted Skyline</a>
+          {" "}por nosferatu, no{" "}
+          <a href="https://wallpapers.com/" target="_blank" rel="noreferrer" className="underline decoration-white/30 underline-offset-2">Wallpapers.com</a>
+        </p>
       </section>
 
       <Reveal>
@@ -57,10 +61,10 @@ export default function HomeContent() {
           <h2 className="display text-[clamp(36px,4vw,56px)] leading-none text-green-deep">Serviços para condomínios</h2>
           <article className="relative mt-10 min-h-[420px] overflow-hidden rounded-3xl bg-[#0c2434] shadow-card lg:grid lg:min-h-[460px] lg:grid-cols-[0.72fr_1.28fr]">
             <Image
-              src="/images/hero-condominio.jpg"
-              alt=""
+              src="/images/sindico-predio.jpg"
+              alt="Dois profissionais conversando na frente de um edifício"
               fill
-              className="object-cover object-[72%_center] lg:hidden"
+              className="object-cover object-center lg:hidden"
               sizes="100vw"
             />
             <div className="absolute inset-0 bg-[#0c2434]/72 lg:hidden" />
@@ -75,24 +79,40 @@ export default function HomeContent() {
             </div>
             <div className="relative z-10 flex flex-col justify-center px-6 py-10 text-white sm:px-10 lg:px-12">
               <Image
-                src="/images/hero-condominio.jpg"
+                src="/images/sindico-predio.jpg"
                 alt=""
                 fill
-                className="hidden object-cover lg:block"
+                className="hidden object-cover object-center lg:block"
                 sizes="(min-width: 1024px) 55vw, 100vw"
               />
               <div className="absolute inset-0 hidden bg-[#0c2434]/78 lg:block" />
-              <div className="relative max-w-xl">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-sand">Síndico profissional</p>
-                <h3 className="display mt-4 text-[clamp(34px,3.6vw,52px)] leading-[1.02]">Se está precisando de um síndico profissional</h3>
-                <p className="mt-4 max-w-md text-[15px] leading-relaxed text-white/80">Duas formas de contar com um síndico profissional no condomínio.</p>
-                <div className="mt-8 flex flex-wrap gap-3">
-                  {["Síndico exclusivo", "Síndico independente"].map((option) => (
-                    <Link key={option} href="/contato" className="inline-flex items-center justify-center rounded-full border border-sand/80 px-5 py-2.5 text-sm font-semibold tracking-wide text-foam transition duration-200 hover:bg-sand hover:text-green-deep">
-                      {option}
-                    </Link>
+              <div className="relative max-w-2xl">
+                <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-sand">Síndico profissional</p>
+                <h3 className="display mt-3 text-[clamp(30px,3vw,44px)] font-medium leading-[1.18] tracking-tight">Síndico exclusivo para mandato tampão / temporário — Leal</h3>
+                <p className="mt-5 max-w-xl text-base leading-7 text-white/92">O síndico do seu prédio precisou se ausentar, tirar férias, renunciou ou o cargo ficou vago? Nenhum condômino quer o cargo?</p>
+                <p className="mt-4 text-lg font-semibold leading-snug text-white">O condomínio não pode parar. Temos a solução.</p>
+                <p className="mt-4 max-w-xl text-base leading-7 text-white/90">A Leal Administradora de Condomínios oferece o serviço de síndico exclusivo para mandato tampão / temporário — a opção ideal quando existe a ausência, férias ou vacância do síndico do seu prédio.</p>
+                <p className="mt-6 text-base font-semibold text-white">Com o nosso síndico exclusivo, você garante:</p>
+                <ul className="mt-3 grid gap-2.5 text-base leading-7 text-white/92">
+                  {[
+                    "Gestão presente e profissional em seu condomínio",
+                    "Continuidade total da administração com prestação de contas do período",
+                    "Atendimento a moradores, fornecedores e emergências",
+                    "Acompanhamento de obras, manutenções e finanças",
+                    "Transparência, Eficiência e Valorização do seu Patrimônio",
+                  ].map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <Check className="mt-0.5 shrink-0 text-sand" size={16} aria-hidden="true" />
+                      <span>{item}</span>
+                    </li>
                   ))}
-                </div>
+                </ul>
+                <p className="mt-5 max-w-xl text-base leading-7 text-white/90">Perfeito para cobrir férias, afastamentos médicos, renúncia, destituição ou quando não há candidatos na assembleia.</p>
+                <p className="mt-4 text-lg font-semibold leading-snug text-white">Mandato tampão / temporário exclusivo: seu condomínio nunca fica sem síndico.</p>
+                <p className="mt-5 text-base tracking-wide text-white/85">Leal Administradora de Condomínios</p>
+                <Link href="/contato" className="mt-5 inline-flex items-center justify-center rounded-full border border-sand/80 px-5 py-2.5 text-sm font-semibold tracking-wide text-foam transition duration-200 hover:bg-sand hover:text-green-deep">
+                  Entre em contato
+                </Link>
               </div>
             </div>
           </article>

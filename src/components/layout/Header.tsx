@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { ChevronDown, Menu, X } from "lucide-react";
-import { portalList } from "@/lib/links";
+import { ChevronDown, Facebook, Instagram, Menu, X, Youtube } from "lucide-react";
+import { contacts, portalList, whatsappHref } from "@/lib/links";
 import { services } from "@/lib/data";
 
 const links = [
@@ -56,6 +56,21 @@ export default function Header() {
   const itemActive = "home-nav text-[12px] font-medium uppercase tracking-[0.18em] text-sand-deep";
   const menuPanel = "menu-float absolute z-20 rounded-2xl border border-line bg-white p-2 pt-3 text-green-deep shadow-card";
   const menuLink = "block rounded-xl px-3 py-2.5 text-sm font-semibold text-green-deep transition hover:bg-cream";
+
+  const socials = [
+    { href: contacts.instagram, label: "Instagram da Leal", icon: <Instagram size={16} /> },
+    { href: contacts.facebook, label: "Facebook da Leal", icon: <Facebook size={16} /> },
+    { href: contacts.youtube, label: "YouTube da Leal", icon: <Youtube size={16} /> },
+    {
+      href: whatsappHref(),
+      label: "WhatsApp da Leal",
+      icon: (
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+          <path d="M20.5 3.5A11 11 0 0 0 2.1 17.8L1 23l5.3-1.1A11 11 0 0 0 12 23a11 11 0 0 0 8.5-19.5zM12 21a9 9 0 0 1-4.6-1.3l-.3-.2-3.1.7.7-3-.2-.3A9 9 0 1 1 12 21zm5-6.7c-.3-.1-1.6-.8-1.8-.9s-.4-.1-.6.1-.7.9-.8 1-.3.2-.6.1a7.4 7.4 0 0 1-2.2-1.4 8.2 8.2 0 0 1-1.5-1.9c-.2-.3 0-.4.1-.6l.4-.5.2-.3a.5.5 0 0 0 0-.5c-.1-.1-.6-1.4-.8-1.9s-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.5 4 4.7 4.7 0 0 0 1.5.6 3.6 3.6 0 0 0 1.7.1 2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.6-.3z" />
+        </svg>
+      ),
+    },
+  ];
 
   return (
     <header className={`fixed inset-x-0 top-0 z-50 border-b border-line bg-white ${scrolled ? "shadow-[0_8px_24px_rgba(15,43,63,0.06)]" : ""}`}>
@@ -121,9 +136,25 @@ export default function Header() {
           </div>
         </nav>
 
-        <Link href="/" className="absolute right-10 top-1/2 hidden -translate-y-1/2 lg:block">
-          <Image src="/images/logo-leal.png" alt="Leal Administradora de Condomínios" width={180} height={205} priority className="h-[148px] w-auto" />
-        </Link>
+        <div className="absolute right-10 top-0 hidden h-full items-center lg:flex">
+          <nav className="mt-3 flex items-center self-start pr-4" aria-label="Redes sociais">
+            {socials.map((item) => (
+              <a key={item.label} href={item.href} target="_blank" rel="noreferrer" aria-label={item.label} className="inline-flex h-8 w-8 items-center justify-center text-green-deep transition hover:text-sand">
+                {item.icon}
+              </a>
+            ))}
+          </nav>
+          <Link href="/" className="ml-3">
+            <Image src="/images/logo-leal.png" alt="Leal Administradora de Condomínios" width={180} height={205} priority className="h-[148px] w-auto" />
+          </Link>
+        </div>
+        <nav className="absolute right-3 top-2 z-20 flex lg:hidden" aria-label="Redes sociais">
+          {socials.map((item) => (
+            <a key={item.label} href={item.href} target="_blank" rel="noreferrer" aria-label={item.label} className="inline-flex h-5 w-5 items-center justify-center text-green-deep [&_svg]:h-3.5 [&_svg]:w-3.5">
+              {item.icon}
+            </a>
+          ))}
+        </nav>
 
         <button type="button" className="relative z-20 ml-auto inline-flex h-11 w-11 items-center justify-center rounded-full text-green-deep lg:hidden" aria-label={open ? "Fechar menu" : "Abrir menu"} onClick={() => setOpen((value) => !value)}>
           {open ? <X /> : <Menu />}

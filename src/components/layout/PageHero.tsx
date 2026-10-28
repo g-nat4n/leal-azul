@@ -35,7 +35,7 @@ export default function PageHero({
       </div>
       <div className="relative h-[32vh] min-h-52 lg:h-auto lg:min-h-full">
         <Image
-          src="/images/hero-cidade-fundo.jpg"
+          src="/images/hero-cidade-fundo.jpg?v=1600"
           alt="Horizonte de uma cidade à noite, com prédios iluminados"
           fill
           unoptimized

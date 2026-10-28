@@ -10,6 +10,7 @@ export const contacts = {
   cep: "80020-942",
   facebook: "https://www.facebook.com/leal.administradora",
   instagram: "https://www.instagram.com/leal.administradora/",
+  youtube: "https://www.youtube.com/results?search_query=Leal+Administradora+de+Condom%C3%ADnios",
   mapEmbed:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3603.1485175314956!2d-49.27667778498581!3d-25.433297783786877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce4729995bd29%3A0x5db2870a4b29c22!2sR.+Volunt%C3%A1rios+da+P%C3%A1tria%2C+233+-+Centro%2C+Curitiba+-+PR!5e0!3m2!1spt-BR!2sbr!4v1444357720698",
   mapLink:
