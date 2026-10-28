@@ -18,12 +18,14 @@ export default function HomeContent() {
       <section className="relative min-h-[100svh] lg:grid lg:grid-cols-[minmax(0,1.28fr)_minmax(0,0.72fr)]">
         <div className="absolute inset-0 lg:relative lg:col-start-2 lg:row-start-1 lg:min-h-full">
           <Image
-            src="/images/hero-condominio.jpg"
-            alt="Fachada de um condomínio residencial, com varandas e janelas"
+            src="/images/hero-cidade-fundo.jpg"
+            alt="Horizonte de uma cidade à noite, com prédios iluminados"
             fill
             priority
+            unoptimized
+            quality={92}
             className="object-cover"
-            sizes="(min-width: 1024px) 46vw, 100vw"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-[#0c2434]/68 lg:bg-transparent lg:bg-gradient-to-t lg:from-black/35 lg:via-transparent lg:to-black/20" />
         </div>

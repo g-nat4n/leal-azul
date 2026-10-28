@@ -35,11 +35,13 @@ export default function PageHero({
       </div>
       <div className="relative h-[32vh] min-h-52 lg:h-auto lg:min-h-full">
         <Image
-          src="/images/hero-condominio.jpg"
-          alt="Fachada de um condomínio residencial, com varandas e janelas"
+          src="/images/hero-cidade-fundo.jpg"
+          alt="Horizonte de uma cidade à noite, com prédios iluminados"
           fill
+          unoptimized
+          quality={92}
           className="object-cover"
-          sizes="(min-width: 1024px) 46vw, 100vw"
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/20" />
       </div>
