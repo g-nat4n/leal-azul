@@ -15,7 +15,6 @@ export default function LegislacaoPage() {
         eyebrow="Legislação"
         title="Referências para síndico e condômino"
         description="Resumos do que cada norma trata, com link para o texto oficial."
-        crumbs={[{ label: "Home", href: "/" }, { label: "Legislação" }]}
       />
       <section className="section-padding bg-cream">
         <div className="container-main grid gap-5">

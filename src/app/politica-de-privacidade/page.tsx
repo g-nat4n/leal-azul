@@ -14,7 +14,6 @@ export default function PrivacidadePage() {
         eyebrow="Privacidade"
         title="Política de privacidade"
         description="A E N Leal Contabilidade trata os dados enviados neste site para responder contatos e enviar propostas."
-        crumbs={[{ label: "Home", href: "/" }, { label: "Política de privacidade" }]}
       />
       <section className="section-padding bg-cream">
         <div className="container-main max-w-3xl space-y-5 leading-relaxed text-muted">

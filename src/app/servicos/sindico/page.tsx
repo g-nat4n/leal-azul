@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Check, Phone } from "lucide-react";
+import PageHero from "@/components/layout/PageHero";
 import ContactCta from "@/components/sections/ContactCta";
 import { contacts, whatsappHref } from "@/lib/links";
 
@@ -56,34 +57,11 @@ function Phones({ dark = false }: { dark?: boolean }) {
 export default function SindicoPage() {
   return (
     <>
-      <section className="relative flex flex-col lg:grid lg:min-h-[640px] lg:grid-cols-[minmax(0,1.12fr)_minmax(0,0.88fr)]">
-        <div className="hero-panel relative flex flex-col items-center justify-center px-6 pb-14 pt-[148px] text-center text-white sm:px-10 lg:px-16 lg:pb-16 lg:pt-[210px]">
-          <div className="w-full max-w-2xl">
-            <nav className="text-base text-white/70" aria-label="Trilha">
-              <Link href="/" className="hover:text-sand">Home</Link>
-              <span className="px-2">/</span>
-              <Link href="/servicos" className="hover:text-sand">Serviços</Link>
-              <span className="px-2">/</span>
-              <span>Modelos de síndico</span>
-            </nav>
-            <p className="mt-6 text-sm font-semibold uppercase tracking-[0.22em] text-sand sm:text-base">Síndico profissional</p>
-            <h1 className="display mt-4 text-[clamp(46px,6vw,76px)] leading-[0.98] text-white">Modelos de síndico</h1>
-            <span className="mx-auto mt-6 block h-px w-16 bg-sand" />
-            <p className="mx-auto mt-6 max-w-xl text-xl leading-relaxed text-white/90">Síndico independente e síndico exclusivo para mandato tampão ou temporário.</p>
-          </div>
-        </div>
-        <div className="relative h-[46vh] min-h-72 lg:h-auto lg:min-h-full">
-          <picture>
-            <source media="(min-width: 1024px)" srcSet="/images/hero-cidade-fundo.jpg?v=1600" />
-            <img
-              src="/images/hero-cidade-mobile.jpg?v=1170"
-              alt="Horizonte de uma cidade à noite, com prédios iluminados"
-              className="absolute inset-0 h-full w-full object-cover object-center"
-            />
-          </picture>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0c2434]/45 via-transparent to-transparent lg:bg-gradient-to-l" />
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Síndico profissional"
+        title="Modelos de síndico"
+        description="Síndico independente e síndico exclusivo para mandato tampão ou temporário."
+      />
 
       <section className="section-padding bg-cream">
         <div className="container-main grid gap-8">

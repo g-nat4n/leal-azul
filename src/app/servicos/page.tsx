@@ -14,7 +14,6 @@ export default function ServicosPage() {
         eyebrow="Serviços"
         title="Tudo o que o condomínio precisa no dia a dia"
         description="Escolha uma área para ver o que está incluído na administração."
-        crumbs={[{ label: "Home", href: "/" }, { label: "Serviços" }]}
       />
       <section className="section-padding bg-cream">
         <div className="container-main">

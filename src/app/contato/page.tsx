@@ -16,7 +16,6 @@ export default function ContatoPage() {
         eyebrow="Contato"
         title="Fale com a Leal"
         description="Solicite uma proposta e conheça o que a Leal Administradora de Condomínios tem a oferecer."
-        crumbs={[{ label: "Home", href: "/" }, { label: "Contato" }]}
       />
       <section className="section-padding bg-cream">
         <div className="container-main grid items-start gap-8 lg:grid-cols-[0.9fr_1.1fr]">

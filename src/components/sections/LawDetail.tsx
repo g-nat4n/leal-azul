@@ -11,11 +11,6 @@ export default function LawDetail({ slug }: { slug: string }) {
         eyebrow="Legislação"
         title={law.title}
         description={law.summary}
-        crumbs={[
-          { label: "Home", href: "/" },
-          { label: "Legislação", href: "/legislacao" },
-          { label: law.title },
-        ]}
       />
       <section className="section-padding bg-cream">
         <div className="container-main grid gap-10 lg:grid-cols-[1.4fr_0.6fr]">

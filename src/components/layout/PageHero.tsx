@@ -1,38 +1,19 @@
-import Link from "next/link";
-
-type Crumb = { label: string; href?: string };
+import type { ReactNode } from "react";
 
 export default function PageHero({
   eyebrow,
   title,
   description,
-  crumbs,
+  children,
 }: {
   eyebrow?: string;
   title: string;
   description?: string;
-  crumbs: Crumb[];
+  children?: ReactNode;
 }) {
   return (
-    <section className="relative flex flex-col lg:grid lg:min-h-[560px] lg:grid-cols-[minmax(0,1.28fr)_minmax(0,0.72fr)]">
-      <div className="hero-panel relative flex flex-col items-center justify-center px-6 pb-12 pt-[148px] text-center text-white sm:px-10 lg:px-16 lg:pb-16 lg:pt-[210px]">
-        <div className="w-full max-w-2xl">
-          <nav className="text-sm text-white/65" aria-label="Trilha">
-            {crumbs.map((crumb, index) => (
-              <span key={crumb.label}>
-                {index > 0 && <span className="px-2">/</span>}
-                {crumb.href ? <Link href={crumb.href} className="hover:text-sand">{crumb.label}</Link> : crumb.label}
-              </span>
-            ))}
-          </nav>
-          {eyebrow && <p className="eyebrow-light mt-5">{eyebrow}</p>}
-          <h1 className="display mt-3 text-[clamp(40px,5vw,64px)] leading-[0.98] text-white">
-            {title}
-          </h1>
-          {description && <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-white/75">{description}</p>}
-        </div>
-      </div>
-      <div className="relative h-[32vh] min-h-52 lg:h-auto lg:min-h-full">
+    <section className="relative min-h-[640px] lg:min-h-[620px]">
+      <div className="absolute inset-0">
         <picture>
           <source media="(min-width: 1024px)" srcSet="/images/hero-cidade-fundo.jpg?v=1600" />
           <img
@@ -41,7 +22,16 @@ export default function PageHero({
             className="absolute inset-0 h-full w-full object-cover object-center"
           />
         </picture>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/20" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(12,36,52,0.78)_0%,rgba(12,36,52,0.55)_52%,rgba(12,36,52,0.32)_100%)]" />
+      </div>
+      <div className="relative z-10 flex min-h-[640px] flex-col items-center justify-center px-6 pb-16 pt-[168px] text-center text-white sm:px-10 lg:min-h-[620px] lg:px-16 lg:pb-16 lg:pt-[210px]">
+        <div className="w-full max-w-3xl" style={{ textShadow: "0 2px 18px rgba(0,0,0,0.45)" }}>
+          {eyebrow && <p className="text-sm font-semibold uppercase tracking-[0.22em] text-sand sm:text-base">{eyebrow}</p>}
+          <h1 className="display mt-4 text-[clamp(42px,6vw,72px)] leading-[0.98] text-white">{title}</h1>
+          <span className="mx-auto mt-5 block h-px w-16 bg-sand" />
+          {description && <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-white sm:text-xl">{description}</p>}
+          {children}
+        </div>
       </div>
     </section>
   );

@@ -48,11 +48,6 @@ export default function HomeContent() {
             </div>
           </div>
         </div>
-        <p className="absolute bottom-3 right-4 z-10 max-w-[16rem] text-right text-[10px] leading-snug tracking-wide text-white/55">
-          <a href="https://wallpapers.com/wallpapers/blue-tinted-skyline-photo-of-los-angeles-4k-0pz4g2ee6uyfhucs.html" target="_blank" rel="noreferrer" className="underline decoration-white/30 underline-offset-2">Blue-Tinted Skyline</a>
-          {" "}por nosferatu, no{" "}
-          <a href="https://wallpapers.com/" target="_blank" rel="noreferrer" className="underline decoration-white/30 underline-offset-2">Wallpapers.com</a>
-        </p>
       </section>
 
       <Reveal>

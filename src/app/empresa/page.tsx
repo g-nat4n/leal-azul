@@ -14,7 +14,6 @@ export default function EmpresaPage() {
         eyebrow="Empresa"
         title="Leal Administradora de Condomínios"
         description="Serviços de excelência no mercado de Curitiba e região."
-        crumbs={[{ label: "Home", href: "/" }, { label: "Empresa" }]}
       />
       <section className="section-padding bg-cream">
         <div className="container-main grid gap-8 md:grid-cols-2">

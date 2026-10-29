@@ -13,11 +13,6 @@ export default function ServiceDetail({ slug }: { slug: string }) {
         eyebrow="Serviços"
         title={service.title}
         description={service.summary}
-        crumbs={[
-          { label: "Home", href: "/" },
-          { label: "Serviços", href: "/servicos" },
-          { label: service.title },
-        ]}
       />
       <section className="section-padding bg-cream">
         <div className="container-main grid gap-12 lg:grid-cols-[1.4fr_0.6fr]">
