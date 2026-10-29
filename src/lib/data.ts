@@ -78,6 +78,16 @@ export const services: Service[] = [
     ],
   },
   {
+    slug: "sindico",
+    title: "Modelos de síndico",
+    summary: "Síndico independente e síndico exclusivo para mandato tampão ou temporário.",
+    items: [
+      "Síndico independente, profissional e sem vínculo com moradores.",
+      "Mandato tampão ou temporário quando o cargo fica vago.",
+      "Gestão presente, com prestação de contas do período.",
+    ],
+  },
+  {
     slug: "online",
     title: "Serviços on-line",
     summary: "Canal digital para síndico e condôminos acompanharem o condomínio.",

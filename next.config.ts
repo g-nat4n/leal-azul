@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      { source: "/sindico", destination: "/servicos/sindico", permanent: false },
       { source: "/contac-us", destination: "/contato", permanent: true },
       { source: "/clientes", destination: "/empresa", permanent: true },
       { source: "/portfolio/administracao", destination: "/servicos/administracao", permanent: true },

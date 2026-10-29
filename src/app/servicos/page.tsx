@@ -4,7 +4,7 @@ import ServiceGrid from "@/components/sections/ServiceGrid";
 
 export const metadata: Metadata = {
   title: "Serviços",
-  description: "Administração, cobrança, contabilidade, recursos humanos e condomínio on-line.",
+  description: "Administração, síndico profissional, cobrança, contabilidade, recursos humanos e condomínio on-line.",
 };
 
 export default function ServicosPage() {

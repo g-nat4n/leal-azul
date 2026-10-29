@@ -26,6 +26,7 @@ export default function Footer() {
           <p className="eyebrow-light">Páginas</p>
           <ul className="mt-4 grid gap-2 text-sm text-white/80">
             <li><Link href="/empresa" className="hover:text-white">Empresa</Link></li>
+            <li><Link href="/servicos/sindico" className="hover:text-white">Modelos de síndico</Link></li>
             <li><Link href="/servicos" className="hover:text-white">Serviços</Link></li>
             <li><Link href="/legislacao" className="hover:text-white">Legislação</Link></li>
             <li><Link href="/contato" className="hover:text-white">Contato e endereço</Link></li>

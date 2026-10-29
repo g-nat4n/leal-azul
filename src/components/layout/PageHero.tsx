@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 type Crumb = { label: string; href?: string };
@@ -34,15 +33,14 @@ export default function PageHero({
         </div>
       </div>
       <div className="relative h-[32vh] min-h-52 lg:h-auto lg:min-h-full">
-        <Image
-          src="/images/hero-cidade-fundo.jpg?v=1600"
-          alt="Horizonte de uma cidade à noite, com prédios iluminados"
-          fill
-          unoptimized
-          quality={92}
-          className="object-cover"
-          sizes="100vw"
-        />
+        <picture>
+          <source media="(min-width: 1024px)" srcSet="/images/hero-cidade-fundo.jpg?v=1600" />
+          <img
+            src="/images/hero-cidade-mobile.jpg?v=1170"
+            alt="Horizonte de uma cidade à noite, com prédios iluminados"
+            className="absolute inset-0 h-full w-full object-cover object-center"
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/20" />
       </div>
     </section>

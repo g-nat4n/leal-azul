@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Check, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import { contacts, googleReview, portalList } from "@/lib/links";
 import ContactCta from "@/components/sections/ContactCta";
 import ServiceRail from "@/components/sections/ServiceRail";
@@ -30,19 +30,19 @@ export default function HomeContent() {
         </div>
         <div className="relative z-10 flex min-h-[100svh] flex-col items-center justify-center px-6 pb-16 pt-[168px] text-center text-white sm:px-10 lg:px-16 lg:pb-20 lg:pt-[220px]">
           <div className="flex w-full max-w-xl flex-col items-center lg:max-w-3xl" style={{ textShadow: "0 2px 18px rgba(0,0,0,0.45)" }}>
-            <p className="text-[12px] uppercase tracking-[0.28em] text-sand sm:text-[13px] sm:tracking-[0.32em]">Curitiba, região e litoral</p>
-            <h1 className="display mt-3 text-[clamp(84px,13vw,168px)] font-semibold uppercase leading-[0.82] tracking-[0.03em] text-white lg:mt-4" style={{ textShadow: "0 10px 36px rgba(0,0,0,0.55)" }}>Leal</h1>
-            <span className="mt-5 block h-px w-16 bg-sand" />
-            <p className="mt-5 max-w-md text-[15px] font-medium uppercase leading-relaxed tracking-[0.2em] text-white sm:text-[18px] sm:tracking-[0.24em]">Administradora de condomínios</p>
-            <div className="mt-8 grid w-full max-w-md grid-cols-2 gap-6 text-[13px] uppercase leading-relaxed tracking-[0.16em] text-white sm:text-[14px] sm:tracking-[0.18em] lg:mt-10">
+            <p className="text-lg uppercase tracking-[0.12em] text-sand sm:text-xl sm:tracking-[0.16em]">Curitiba, região e litoral</p>
+            <h1 className="display mt-3 text-[clamp(108px,15vw,210px)] font-semibold uppercase leading-[0.82] tracking-[0.03em] text-white lg:mt-4" style={{ textShadow: "0 10px 36px rgba(0,0,0,0.55)" }}>Leal</h1>
+            <span className="mt-5 block h-px w-24 bg-sand" />
+            <p className="mt-5 max-w-xl text-xl font-medium uppercase leading-relaxed tracking-[0.08em] text-white sm:text-[28px] sm:tracking-[0.12em]">Administradora de condomínios</p>
+            <div className="mt-8 grid w-full max-w-xl grid-cols-2 gap-6 text-lg uppercase leading-relaxed tracking-[0.06em] text-white sm:text-xl sm:tracking-[0.08em] lg:mt-10">
               <p>Mais de<br />15 anos</p>
               <p>Residencial<br />e comercial</p>
             </div>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
-              <Link href="/contato" className="btn btn-ghost px-6 text-[12px] uppercase tracking-[0.16em]">
+              <Link href="/contato" className="btn btn-ghost px-8 text-lg uppercase tracking-[0.08em]">
                 Solicite uma proposta
               </Link>
-              <a href={portalList[0].href} target="_blank" rel="noreferrer" className="text-[12px] uppercase tracking-[0.2em] text-white/85 underline decoration-white/40 underline-offset-8 hover:text-sand">
+              <a href={portalList[0].href} target="_blank" rel="noreferrer" className="text-lg uppercase tracking-[0.1em] text-white/85 underline decoration-white/40 underline-offset-8 hover:text-sand">
                 Acessar o sistema
               </a>
             </div>
@@ -86,32 +86,12 @@ export default function HomeContent() {
                 sizes="(min-width: 1024px) 55vw, 100vw"
               />
               <div className="absolute inset-0 hidden bg-[#0c2434]/78 lg:block" />
-              <div className="relative max-w-2xl">
-                <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-sand">Síndico profissional</p>
-                <h3 className="display mt-3 text-[clamp(30px,3vw,44px)] font-medium leading-[1.18] tracking-tight">Síndico exclusivo para mandato tampão / temporário — Leal</h3>
-                <p className="mt-5 max-w-xl text-base leading-7 text-white/92">O síndico do seu prédio precisou se ausentar, tirar férias, renunciou ou o cargo ficou vago? Nenhum condômino quer o cargo?</p>
-                <p className="mt-4 text-lg font-semibold leading-snug text-white">O condomínio não pode parar. Temos a solução.</p>
-                <p className="mt-4 max-w-xl text-base leading-7 text-white/90">A Leal Administradora de Condomínios oferece o serviço de síndico exclusivo para mandato tampão / temporário — a opção ideal quando existe a ausência, férias ou vacância do síndico do seu prédio.</p>
-                <p className="mt-6 text-base font-semibold text-white">Com o nosso síndico exclusivo, você garante:</p>
-                <ul className="mt-3 grid gap-2.5 text-base leading-7 text-white/92">
-                  {[
-                    "Gestão presente e profissional em seu condomínio",
-                    "Continuidade total da administração com prestação de contas do período",
-                    "Atendimento a moradores, fornecedores e emergências",
-                    "Acompanhamento de obras, manutenções e finanças",
-                    "Transparência, Eficiência e Valorização do seu Patrimônio",
-                  ].map((item) => (
-                    <li key={item} className="flex gap-2">
-                      <Check className="mt-0.5 shrink-0 text-sand" size={16} aria-hidden="true" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-5 max-w-xl text-base leading-7 text-white/90">Perfeito para cobrir férias, afastamentos médicos, renúncia, destituição ou quando não há candidatos na assembleia.</p>
-                <p className="mt-4 text-lg font-semibold leading-snug text-white">Mandato tampão / temporário exclusivo: seu condomínio nunca fica sem síndico.</p>
-                <p className="mt-5 text-base tracking-wide text-white/85">Leal Administradora de Condomínios</p>
-                <Link href="/contato" className="mt-5 inline-flex items-center justify-center rounded-full border border-sand/80 px-5 py-2.5 text-sm font-semibold tracking-wide text-foam transition duration-200 hover:bg-sand hover:text-green-deep">
-                  Entre em contato
+              <div className="relative max-w-xl">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-sand">Síndico profissional</p>
+                <h3 className="display mt-4 text-[clamp(34px,3.6vw,52px)] leading-[1.02]">Se está precisando de um síndico profissional</h3>
+                <p className="mt-4 max-w-md text-[15px] leading-relaxed text-white/80">Duas formas de contar com um síndico profissional no condomínio: síndico exclusivo e síndico independente.</p>
+                <Link href="/servicos/sindico" className="mt-8 inline-flex items-center justify-center rounded-full border border-sand/80 px-5 py-2.5 text-sm font-semibold tracking-wide text-foam transition duration-200 hover:bg-sand hover:text-green-deep">
+                  Conheça os modelos de síndico
                 </Link>
               </div>
             </div>
