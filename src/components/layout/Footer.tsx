@@ -65,7 +65,7 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} Leal Administradora de Condomínios. Todos os direitos reservados.</p>
           <p className="flex flex-wrap items-center gap-x-1.5 text-white/75 sm:justify-center">
             <span>Site construído por</span>
-            <a href="https://grupocostabr.com.br/" target="_blank" rel="noopener noreferrer" className="font-bold text-white transition hover:text-foam">
+            <a href="https://www.instagram.com/grupocostabrasil/" target="_blank" rel="noopener noreferrer" className="font-bold text-white transition hover:text-foam">
               Grupo Costa Brasil
             </a>
             <a href="https://www.instagram.com/grupocostabrasil/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Grupo Costa Brasil" className="inline-flex text-white/80 transition hover:text-foam">

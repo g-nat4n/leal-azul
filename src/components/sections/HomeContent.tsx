@@ -5,6 +5,7 @@ import { contacts, googleReview, portalList } from "@/lib/links";
 import ContactCta from "@/components/sections/ContactCta";
 import ServiceRail from "@/components/sections/ServiceRail";
 import Reveal from "@/components/ui/Reveal";
+import ExperienceCount from "@/components/ui/ExperienceCount";
 
 const portalPhotos = [
   { src: "/images/card-condomino.jpg", alt: "Sala de estar de um apartamento" },
@@ -34,10 +35,9 @@ export default function HomeContent() {
             <h1 className="display mt-3 text-[clamp(108px,15vw,210px)] font-semibold uppercase leading-[0.82] tracking-[0.03em] text-white lg:mt-4" style={{ textShadow: "0 10px 36px rgba(0,0,0,0.55)" }}>Leal</h1>
             <span className="mt-5 block h-px w-24 bg-sand" />
             <p className="mt-5 max-w-xl text-xl font-semibold uppercase leading-relaxed tracking-[0.1em] text-white sm:text-[28px] sm:tracking-[0.14em]">Administradora de condomínios</p>
-            <div className="mt-8 grid w-full max-w-xl grid-cols-2 gap-6 text-xl font-bold uppercase leading-snug tracking-[0.08em] text-white sm:text-2xl sm:tracking-[0.1em] lg:mt-10">
-              <p>Mais de<br />15 anos</p>
-              <p>Residencial<br />e comercial</p>
-            </div>
+            <p className="mt-8 text-xl font-bold uppercase leading-snug tracking-[0.08em] text-white sm:text-2xl sm:tracking-[0.1em] lg:mt-10" style={{ textShadow: "0 3px 16px rgba(0,0,0,0.65), 0 1px 3px rgba(0,0,0,0.55)" }}>
+              Residencial e comercial
+            </p>
             <div className="mt-10 flex w-full max-w-sm flex-col items-stretch gap-3 sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-5">
               <Link href="/contato" className="btn btn-light w-full px-8 py-4 text-base font-bold uppercase tracking-[0.1em] sm:w-auto sm:text-lg">
                 Solicite uma proposta
@@ -49,6 +49,35 @@ export default function HomeContent() {
           </div>
         </div>
       </section>
+
+      <Reveal>
+      <section className="bg-white">
+        <div className="container-main py-14 lg:py-20">
+          <div className="grid items-center gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
+            <div className="relative mx-auto aspect-square w-full max-w-[360px] lg:mx-0 lg:max-w-[420px]">
+              <div className="absolute -inset-3 rounded-[1.35rem] border border-sand/50" aria-hidden />
+              <div className="relative h-full w-full overflow-hidden rounded-[1.1rem] border border-line bg-cream">
+                <Image
+                  src="/images/sindico-predio.jpg"
+                  alt="Profissionais da administração conversando na frente de um edifício"
+                  fill
+                  className="object-cover object-[center_35%]"
+                  sizes="(min-width: 1024px) 420px, 360px"
+                />
+              </div>
+            </div>
+            <div className="text-center lg:text-left">
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-sand-deep">Trajetória</p>
+              <ExperienceCount to={15} />
+              <h2 className="display mt-2 text-[clamp(34px,4vw,52px)] leading-[1.05] text-green-deep">anos de experiência</h2>
+              <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-muted lg:mx-0 lg:text-lg">
+                Administração de condomínios residenciais e comerciais em Curitiba, região e litoral, com atendimento próximo ao síndico e aos condôminos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      </Reveal>
 
       <Reveal>
       <section className="bg-cream">

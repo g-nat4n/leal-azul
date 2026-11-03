@@ -133,7 +133,7 @@ export const laws: Law[] = [
       "Com base no parecer do especialista, o síndico ou a administradora podem autorizar, autorizar com ressalvas ou proibir a reforma.",
     ],
     officialLabel: "Consultar a norma na ABNT",
-    officialHref: "https://www.abntcatalogo.com.br/normagrid.aspx?Q=NBR%2016280",
+    officialHref: "https://www.abntcatalogo.com.br/norma.aspx?ID=320906",
   },
   {
     slug: "codigo-civil",
