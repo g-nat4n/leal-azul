@@ -129,7 +129,7 @@ body[data-menu="open"] .whatsapp-fab {
   }
 
   .btn-light {
-    @apply bg-white text-green-deep hover:bg-foam;
+    @apply border-2 border-transparent bg-white text-green-deep hover:bg-foam;
   }
 
   .btn-dark {

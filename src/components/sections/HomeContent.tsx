@@ -9,7 +9,7 @@ import Reveal from "@/components/ui/Reveal";
 const portalPhotos = [
   { src: "/images/card-condomino.jpg", alt: "Sala de estar de um apartamento" },
   { src: "/images/card-gestao.jpg", alt: "Equipe analisando relatórios em uma mesa de trabalho" },
-  { src: "/images/card-portaria.jpg", alt: "Fachada de um edifício" },
+  { src: "/images/card-portaria-portao.jpg", alt: "Portão de condomínio com interfone e controle de acesso" },
 ];
 
 export default function HomeContent() {
@@ -38,11 +38,11 @@ export default function HomeContent() {
               <p>Mais de<br />15 anos</p>
               <p>Residencial<br />e comercial</p>
             </div>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4 sm:gap-5">
-              <Link href="/contato" className="btn btn-light px-8 py-4 text-base font-bold uppercase tracking-[0.1em] sm:text-lg">
+            <div className="mt-10 flex w-full max-w-sm flex-col items-stretch gap-3 sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-5">
+              <Link href="/contato" className="btn btn-light w-full px-8 py-4 text-base font-bold uppercase tracking-[0.1em] sm:w-auto sm:text-lg">
                 Solicite uma proposta
               </Link>
-              <a href={portalList[0].href} target="_blank" rel="noreferrer" className="btn btn-ghost px-8 py-4 text-base font-bold uppercase tracking-[0.1em] sm:text-lg">
+              <a href={portalList[0].href} target="_blank" rel="noreferrer" className="btn btn-ghost w-full px-8 py-4 text-base font-bold uppercase tracking-[0.1em] sm:w-auto sm:text-lg">
                 Acessar o sistema
               </a>
             </div>
