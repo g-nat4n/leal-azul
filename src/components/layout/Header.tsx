@@ -52,8 +52,8 @@ export default function Header() {
     return pathname.startsWith(href);
   }
 
-  const itemClass = "home-nav text-[12px] font-medium uppercase tracking-[0.18em] text-green-deep/75";
-  const itemActive = "home-nav text-[12px] font-medium uppercase tracking-[0.18em] text-sand-deep";
+  const itemClass = "home-nav text-[13px] font-semibold uppercase tracking-[0.16em] text-green-deep";
+  const itemActive = "home-nav text-[13px] font-semibold uppercase tracking-[0.16em] text-sand-deep";
   const menuPanel = "menu-float absolute z-20 rounded-2xl border border-line bg-white p-2 pt-3 text-green-deep shadow-card";
   const menuLink = "block rounded-xl px-3 py-2.5 text-sm font-semibold text-green-deep transition hover:bg-cream";
 

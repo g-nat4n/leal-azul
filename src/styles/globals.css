@@ -125,7 +125,11 @@ body[data-menu="open"] .whatsapp-fab {
   }
 
   .btn-ghost {
-    @apply border-white/40 text-white hover:bg-white/10;
+    @apply border-2 border-white text-white hover:bg-white/15;
+  }
+
+  .btn-light {
+    @apply bg-white text-green-deep hover:bg-foam;
   }
 
   .btn-dark {

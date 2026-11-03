@@ -33,16 +33,16 @@ export default function HomeContent() {
             <p className="text-lg uppercase tracking-[0.12em] text-sand sm:text-xl sm:tracking-[0.16em]">Curitiba, região e litoral</p>
             <h1 className="display mt-3 text-[clamp(108px,15vw,210px)] font-semibold uppercase leading-[0.82] tracking-[0.03em] text-white lg:mt-4" style={{ textShadow: "0 10px 36px rgba(0,0,0,0.55)" }}>Leal</h1>
             <span className="mt-5 block h-px w-24 bg-sand" />
-            <p className="mt-5 max-w-xl text-xl font-medium uppercase leading-relaxed tracking-[0.08em] text-white sm:text-[28px] sm:tracking-[0.12em]">Administradora de condomínios</p>
-            <div className="mt-8 grid w-full max-w-xl grid-cols-2 gap-6 text-lg uppercase leading-relaxed tracking-[0.06em] text-white sm:text-xl sm:tracking-[0.08em] lg:mt-10">
+            <p className="mt-5 max-w-xl text-xl font-semibold uppercase leading-relaxed tracking-[0.1em] text-white sm:text-[28px] sm:tracking-[0.14em]">Administradora de condomínios</p>
+            <div className="mt-8 grid w-full max-w-xl grid-cols-2 gap-6 text-xl font-bold uppercase leading-snug tracking-[0.08em] text-white sm:text-2xl sm:tracking-[0.1em] lg:mt-10">
               <p>Mais de<br />15 anos</p>
               <p>Residencial<br />e comercial</p>
             </div>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
-              <Link href="/contato" className="btn btn-ghost px-8 text-lg uppercase tracking-[0.08em]">
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-4 sm:gap-5">
+              <Link href="/contato" className="btn btn-light px-8 py-4 text-base font-bold uppercase tracking-[0.1em] sm:text-lg">
                 Solicite uma proposta
               </Link>
-              <a href={portalList[0].href} target="_blank" rel="noreferrer" className="text-lg uppercase tracking-[0.1em] text-white/85 underline decoration-white/40 underline-offset-8 hover:text-sand">
+              <a href={portalList[0].href} target="_blank" rel="noreferrer" className="btn btn-ghost px-8 py-4 text-base font-bold uppercase tracking-[0.1em] sm:text-lg">
                 Acessar o sistema
               </a>
             </div>
