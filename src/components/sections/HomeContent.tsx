@@ -53,16 +53,16 @@ export default function HomeContent() {
       <Reveal>
       <section className="bg-white">
         <div className="container-main py-14 lg:py-20">
-          <div className="grid items-center gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
-            <div className="relative mx-auto aspect-square w-full max-w-[360px] lg:mx-0 lg:max-w-[420px]">
-              <div className="absolute -inset-3 rounded-[1.35rem] border border-sand/50" aria-hidden />
-              <div className="relative h-full w-full overflow-hidden rounded-[1.1rem] border border-line bg-cream">
+          <div className="grid items-center gap-8 lg:grid-cols-[1.25fr_0.75fr] lg:gap-10">
+            <div className="relative w-full">
+              <div className="absolute -inset-x-2 -inset-y-2 rounded-[1.25rem] border border-sand/50 sm:-inset-x-3 sm:-inset-y-3 sm:rounded-[1.4rem]" aria-hidden />
+              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[1rem] border border-line bg-cream sm:rounded-[1.15rem]">
                 <Image
-                  src="/images/sindico-predio.jpg"
-                  alt="Profissionais da administração conversando na frente de um edifício"
+                  src="/images/experiencia-maquete.jpg"
+                  alt="Maquete de empreendimento urbano com prédios modernos"
                   fill
-                  className="object-cover object-[center_35%]"
-                  sizes="(min-width: 1024px) 420px, 360px"
+                  className="object-cover object-center"
+                  sizes="(min-width: 1024px) 55vw, 92vw"
                 />
               </div>
             </div>
